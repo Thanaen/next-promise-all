@@ -50,6 +50,32 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <div className="flex gap-4 mt-4">
+          <a
+            className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+            href="/en/working"
+          >
+            EN Working
+          </a>
+          <a
+            className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+            href="/en/broken"
+          >
+            EN Broken
+          </a>
+          <a
+            className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+            href="/fr/working"
+          >
+            FR Working
+          </a>
+          <a
+            className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+            href="/fr/broken"
+          >
+            FR Broken
+          </a>
+        </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
