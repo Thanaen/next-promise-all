@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -51,30 +52,30 @@ export default function Home() {
           </a>
         </div>
         <div className="flex gap-4 mt-4">
-          <a
+          <Link
             className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
             href="/en/working"
           >
             EN Working
-          </a>
-          <a
+          </Link>
+          <Link
             className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
             href="/en/broken"
           >
             EN Broken
-          </a>
-          <a
+          </Link>
+          <Link
             className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
             href="/fr/working"
           >
             FR Working
-          </a>
-          <a
+          </Link>
+          <Link
             className="rounded border px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
             href="/fr/broken"
           >
             FR Broken
-          </a>
+          </Link>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">

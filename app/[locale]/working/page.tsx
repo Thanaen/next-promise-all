@@ -11,11 +11,13 @@ export default async function WorkingPage({
   console.log("Locale:", locale);
   const dataA = await loadDataA();
   const dataB = await loadDataB();
+  const now = new Date().toLocaleString();
 
   return (
     <div>
       <h1>Working Page</h1>
       <p>Locale: {locale}</p>
+      <p>Rendered at: {now}</p>
       <p>DataA: {dataA}</p>
       <p>DataB: {dataB}</p>
     </div>

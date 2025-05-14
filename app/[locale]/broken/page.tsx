@@ -13,11 +13,13 @@ export default async function BrokenPage({
     loadDataB(),
   ]);
   console.log("Locale:", locale);
+  const now = new Date().toLocaleString();
 
   return (
     <div>
       <h1>Broken Page</h1>
       <p>Locale: {locale}</p>
+      <p>Rendered at: {now}</p>
       <p>DataA: {dataA}</p>
       <p>DataB: {dataB}</p>
     </div>
