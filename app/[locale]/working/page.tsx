@@ -1,4 +1,4 @@
-import { loadDataA, loadDataB } from "../data";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const revalidate = 7200; // 2 hours in seconds
 
@@ -9,17 +9,16 @@ export default async function WorkingPage({
 }) {
   const { locale } = await params;
   console.log("Locale:", locale);
-  const dataA = await loadDataA();
-  const dataB = await loadDataB();
-  const now = new Date().toLocaleString();
+
+  const t = await getTranslations();
+
+  setRequestLocale(locale);
 
   return (
     <div>
+      {t("HomePage.title")}
       <h1>Working Page</h1>
       <p>Locale: {locale}</p>
-      <p>Rendered at: {now}</p>
-      <p>DataA: {dataA}</p>
-      <p>DataB: {dataB}</p>
     </div>
   );
 }

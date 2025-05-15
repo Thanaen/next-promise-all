@@ -1,4 +1,4 @@
-import { loadDataA, loadDataB } from "../data";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const revalidate = 7200; // 2 hours in seconds
 
@@ -7,21 +7,17 @@ export default async function BrokenPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const [{ locale }, dataA, dataB] = await Promise.all([
-    params,
-    loadDataA(),
-    loadDataB(),
-  ]);
+  const [{ locale }, t] = await Promise.all([params, getTranslations()]);
+
+  setRequestLocale(locale);
+
   console.log("Locale:", locale);
-  const now = new Date().toLocaleString();
 
   return (
     <div>
+      {t("HomePage.title")}
       <h1>Broken Page</h1>
       <p>Locale: {locale}</p>
-      <p>Rendered at: {now}</p>
-      <p>DataA: {dataA}</p>
-      <p>DataB: {dataB}</p>
     </div>
   );
 }
