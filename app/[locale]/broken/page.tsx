@@ -8,16 +8,16 @@ export default async function BrokenPage({
   params: Promise<{ locale: string }>;
 }) {
   const [{ locale }, t] = await Promise.all([params, getTranslations()]);
-
   setRequestLocale(locale);
 
-  console.log("Locale:", locale);
+  const renderedAt = new Date().toLocaleString();
 
   return (
     <div>
       {t("HomePage.title")}
       <h1>Broken Page</h1>
       <p>Locale: {locale}</p>
+      <p>Rendered at: {renderedAt}</p>
     </div>
   );
 }

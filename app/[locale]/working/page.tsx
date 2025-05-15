@@ -8,17 +8,17 @@ export default async function WorkingPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  console.log("Locale:", locale);
-
   const t = await getTranslations();
-
   setRequestLocale(locale);
+
+  const renderedAt = new Date().toLocaleString();
 
   return (
     <div>
       {t("HomePage.title")}
       <h1>Working Page</h1>
       <p>Locale: {locale}</p>
+      <p>Rendered at: {renderedAt}</p>
     </div>
   );
 }
